@@ -9,7 +9,7 @@ var command = process.argv[2];
 var songName = process.argv[3];
 var artist = process.argv[4];
 
-// // Spotify function
+// Spotify function
 function spotifyThisSong() {
   spotify.search({ type: 'track', query: songName }, function (err, data) {
     if (err) {
@@ -56,10 +56,64 @@ function concertThis() {
     var dateEvent = moment(date).format("MM/DD/YY");
   }
 }
-  
+
 liri(command);
 
+
+
+// Movie function
+function movieThis() {
+  var queryURL = "http://www.omdbapi.com/?i=tt3896198&apikey=ba373030";
+
+  // axios.get(queryURL, function (err,  response, body) {
+  //   if (err) {
+  //     console.log('Error occurred: ' + err);
+  //     return 
+  //   }
+
+
+  axios.get('/user?ID=12345')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+
+    if (command === "") {
+      var title = data.items[0];
+      var year = data.items[0];
+      var rating = data.items[0];
+      var rottenTomatoes = data.items[0];
+      var country = data.items[0];
+      var language = data.items[0];
+      var plot = data.items[0];
+      var actors = data.items[0];
+  
+      console.log(`title: ${title}`)
+      console.log(`year: ${year}`) 
+      console.log(`rating: ${rating}`);
+      console.log(`rottenTomatoes: ${rottenTomatoes}`)
+      console.log(`country: ${country}`)
+      console.log(`language: ${language}`)
+      console.log(`plot: ${plot}`)
+      console.log(`actors: ${actors}`)
+
+    }
+
+}
+liri(command);
   
 
 
 
+
+
+
+
+// Do Wwhat It Says function
