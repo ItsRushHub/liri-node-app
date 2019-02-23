@@ -46,7 +46,7 @@ liri(command);
 function concertThis() {
   var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
-  if (concertThis === queryURL) {
+  if (command === value) {
     console.log(`venueName: ${venueName}`)
     console.log(`venueLocation: ${venueLocation}`)
     console.log(`dateEvent: ${dateEvent}`)
@@ -64,13 +64,6 @@ liri(command);
 // Movie function
 function movieThis() {
   var queryURL = "http://www.omdbapi.com/?i=tt3896198&apikey=ba373030";
-
-  // axios.get(queryURL, function (err,  response, body) {
-  //   if (err) {
-  //     console.log('Error occurred: ' + err);
-  //     return 
-  //   }
-
 
   axios.get('/user?ID=12345')
   .then(function (response) {
@@ -105,14 +98,9 @@ function movieThis() {
       console.log(`actors: ${actors}`)
 
     }
-
 }
 liri(command);
   
-
-
-
-
 
 
 
